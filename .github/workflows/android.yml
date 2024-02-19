@@ -25,6 +25,9 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
+    - name: List output APK
+      run: ls -R app/build/outputs/apk/
+
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
