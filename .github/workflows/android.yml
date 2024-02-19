@@ -28,8 +28,15 @@ jobs:
     - name: List output APK
       run: ls -R app/build/outputs/apk/
 
-    - name: Upload APK
+        
+    - name: Upload Debug APK
       uses: actions/upload-artifact@v3
       with:
-        name: app-release
-        path: app/build/outputs/apk/release/app-release.apk
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+    
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-release-unsigned
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
